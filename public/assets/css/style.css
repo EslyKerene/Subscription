@@ -1,0 +1,197 @@
+
+/* ################################ details page ################################## */
+
+.one {
+    background-color: whitesmoke;
+    color: black;
+
+    padding: 5px;
+    margin: 25px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.two {
+    padding: 5px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 60px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+img.a {
+    vertical-align: baseline;
+    border-radius: 300px;
+}
+
+.footer1 {
+    color: rgb(108, 75, 75);
+    text-align: left;
+    text-decoration: underline;
+    text-decoration: solid;
+}
+
+.footer2,
+.footer2 a {
+    color: rgb(108, 75, 75);
+    text-align: left;
+    text-decoration-line: underline;
+    text-decoration: solid;
+}
+
+.footer3 {
+    color:rgb(108, 75, 75);
+    text-align: left;
+    text-decoration-line: underline;
+    text-decoration: solid;
+}
+.info.p {
+    color: rgb(108, 75, 75);
+}
+div.rowfooter {
+    background-color: whitesmoke;
+    margin-top: 5%;
+}
+
+a.navbar-brand {
+    color: red;
+    text-decoration: dotted;
+}
+nav.breadcrumb {
+    color: red;
+}
+/* ################################ card ################################## */
+
+div.card.sectioncard {
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+/* ################################ sub-title ################################## */
+
+h1.display-3 {
+    text-decoration: double;
+    color: red;
+}
+h6.display-6{
+color: red;
+}
+/* ################################ details page ################################## */
+
+p.lead {
+    color: black;
+}
+/* ################################ details page ################################## */
+
+div.card.sectioncard img {
+    height: 180px;
+}
+/* ################################ details page ################################## */
+/* ################################ details page ################################## */
+
+.DT{
+    padding: 50px;
+    margin: 50px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    
+}
+/* ################################ buttoms ################################## */
+
+a.btn-primary {
+    color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+a.btn-danger{
+    color: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+/* ################################ details page ################################## */
+
+nav.breadcrumb{
+    color: red;
+}
+/*
+a.btn-secondary {
+    color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+*/
+/*
+.dl{
+    color: black;
+}
+*/
+
+a.nav-link {
+    color: red;
+}
+/* ################################ details page ################################## */
+
+p.card-text {
+    color: blue;
+}
+/* ################################ details page ################################## */
+
+
+h5.card-title {
+    color: red;
+}
+h4.card-title {
+    color:rgb(163, 19, 19);
+}
+/* ################################ details page ################################## */
+
+div.carousselslide {
+    height: 180px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    margin: 3px;
+}
+/* ################################ details page ################################## */
+
+
+div.a{
+    padding: 5px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 60px;
+    overflow: hidden;
+    margin-bottom: 30px; 
+}
+h3.n{
+    color: red;
+}
+p.s{
+    text-decoration: double;
+}
+div.info1{
+    color: red;
+}
+.ss{
+    color: red;
+}
+.active{
+color: rgb(163, 19, 19);;
+}
+/*.details a{
+    background-color: brown;
+}
+
+.details a:hover{
+    background-color: aliceblue;
+}
+
+
+/* ################################ media queries ################################## */
+
