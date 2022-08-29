@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class pricing extends Model
 {
     use HasFactory;
-    protected $table='pricing';
+    protected $table='pricings';
     protected $primarykey='id';
     protected $filltable=['services_id','validity','price'];
 }

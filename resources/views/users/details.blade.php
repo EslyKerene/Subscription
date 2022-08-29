@@ -9,18 +9,19 @@
 
     <center>
         <nav aria-label="breadcrumb one">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Categories</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Services</li>
-            </ol>
+            <div class="title">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Categories</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Services</li>
+                </ol>
+            </div>
         </nav>
     </center>
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
-
-            <div class="col-md-4 a">
+            <div class="col-md-6 details">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -33,7 +34,8 @@
             <div class="col-md-6  ">
                 <div class="description">
                     <h3 class="Netflix n"> Netflix </h3>
-                    <p class="Originals s"> Netflix, is an American subscription streaming service and production company.
+                    <p class="Originals s"> Netflix, is an American subscription streaming service and production
+                        company.
                         It offers a film and television series library through distribution
                         deals as well as
                         its own productions, known as Netflix Originals.
@@ -45,16 +47,20 @@
         </div>
     </div>
 
+    --}}
+
 
 
     <div class="row">
         <div class="col-sm-12">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
+                    {{-- @foreach ($services as $service)
                     <center>
-                        <h6 class="display-6"> Subscriptions </h6>
+                        <h6 class="display-6"> {{$services->name}} </h6>
                     </center>
-
+                    <p>{{$services->description}}</p>
+                        @endforeach --}}
                 </div>
             </div>
         </div>
@@ -68,22 +74,48 @@
                     <div class="card sectioncard DT">
 
                         <div class="card-body">
-                            <h4 class="card-title">
-                                <center>Standard</center>
-                            </h4>
-
+                            <div class="standard">
+                                <h4 class="card-title">
+                                    <strong>
+                                        <center>Basic</center>
+                                    </strong>
+                                </h4>
+                            </div>
 
                             <p class="info1"><strong>
                                     <h5>Characteristics:</h5>
                                 </strong>
-                                <center>20 movies</center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+
                             </p>
                             <dd></dd>
 
                             <p class="info1"> <strong>
                                     <h5>Validity:</h5>
                                 </strong>
-                                <center> 1 month </center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg>1 month
                             </p>
                             <p class="info1"> <strong>
                                     <h5>Price:</h5>
@@ -94,8 +126,8 @@
                             <p class="card-text">
                                 <center> 50$ </center>
                             </p>
-                            <a href="#" class="btn btn-primary btn1"> <b> Buy now </b> </a>
-                            <a href="#" class="btn btn-secondary"> <b> Add to cart </b> </a>
+                            <a href="#" class="btn  btn1"> <b> Buy now </b> </a>
+                            <a href="#" class="btn btn-secondary sec"> <b> Add to cart </b> </a>
 
                         </div>
                     </div>
@@ -105,22 +137,49 @@
                     <div class="card sectioncard DT">
 
                         <div class="card-body">
-                            <h4 class="card-title">
-                                <center>Premuim</center>
-                            </h4>
+                            <div class="Premuim">
 
+                                <h4 class="card-title">
+                                    <strong>
+                                        <center>Standard</center>
+                                    </strong>
+                                </h4>
 
+                            </div>
                             <p class="info1"><strong>
                                     <h5>Characteristics:</h5>
                                 </strong>
-                                <center>20 movies</center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+
                             </p>
                             <dd></dd>
 
                             <p class="info1"> <strong>
                                     <h5>Validity:</h5>
                                 </strong>
-                                <center> 3 months </center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 3 months
                             </p>
                             <p> <strong>
                                     <h5>Price:</h5>
@@ -131,8 +190,8 @@
                             <p class="card-text">
                                 <center> 50$ </center>
                             </p>
-                            <a href="#" class="btn btn-primary"><b> Buy now</b></a>
-                            <a href="#" class="btn btn-secondary"> <b> Add to cart</b> </a>
+                            <a href="#" class="btn btn2"><b> Buy now</b></a>
+                            <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
 
                         </div>
                     </div>
@@ -142,22 +201,49 @@
                     <div class="card sectioncard DT">
 
                         <div class="card-body">
-                            <h4 class="card-title">
-                                <center>V.I.P</center>
-                            </h4>
+                            <div class="VIP">
 
+                                <h4 class="card-title">
+                                    <strong>
+                                        <center>Prenuim</center>
+                                    </strong>
+                                </h4>
+                            </div>
 
                             <p class="info1"><strong>
                                     <h5>Characteristics:</h5>
                                 </strong>
-                                <center>20 movies</center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+
                             </p>
                             <dd></dd>
 
                             <p class="info1"> <strong>
                                     <h5>Validity:</h5>
                                 </strong>
-                                <center> 6 months </center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 6 months
                             </p>
                             <p class="info1"> <strong>
                                     <h5>Price:</h5>
@@ -168,8 +254,8 @@
                             <p class="card-text">
                                 <center> 50$ </center>
                             </p>
-                            <a href="#" class="btn btn-primary"><b> Buy now</b></a>
-                            <a href="#" class="btn btn-secondary"> <b> Add to cart</b> </a>
+                            <a href="#" class="btn btn3"><b> Buy now</b></a>
+                            <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
                         </div>
                     </div>
                 </div>
@@ -178,22 +264,48 @@
                     <div class="card sectioncard DT">
 
                         <div class="card-body">
-                            <h4 class="card-title">
-                                <center>V.V.I.P</center>
-                            </h4>
+                            <div class="VVIP">
 
+                                <h4 class="card-title">
+                                    <strong>
+                                        <center>V.I.P</center>
+                                    </strong>
+                                </h4>
+                            </div>
 
                             <p class="info1"><strong>
                                     <h5>Characteristics:</h5>
                                 </strong>
-                                <center>20 movies</center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 20 movies
+                                <br>
+
                             </p>
                             <dd></dd>
 
                             <p class="info1"> <strong>
                                     <h5>Validity:</h5>
                                 </strong>
-                                <center> 12 months </center>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icon bi bi-check2-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                                    <path
+                                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                                </svg> 12 months
                             </p>
                             <p class="info1"> <strong>
                                     <h5>Price:</h5>
@@ -204,8 +316,8 @@
                             <p class="card-text">
                                 <center> 50$ </center>
                             </p>
-                            <a href="#" class="btn btn-primary"><b> Buy now</b></a>
-                            <a href="#" class="btn btn-secondary"> <b> Add to cart</b> </a>
+                            <a href="#" class="btn btn4"><b> Buy now</b></a>
+                            <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
                         </div>
                     </div>
                 </div>
@@ -237,17 +349,19 @@
 
 
         <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                
-                    <strong> <p class="display-6 ss"> Suggested services </p></strong>
-                 
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+
+                            <strong>
+                                <p class="display-6 ss"> Suggested services </p>
+                            </strong>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          </div>
-        </div>
         </div>
 
 

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('categories_id')-> references('id')-> on('categories');
             $table->string('name');
             $table->string('description');
+            $table->string('services_image');
+
             // $table->integer('price');
             // $table->string('validity');
 

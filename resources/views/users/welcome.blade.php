@@ -3,35 +3,22 @@
 @section('content')
 
 
-<div class="container-fluid pt-5">
+<div class="container-fluid cat pt-5">
   <div class="row">
-    <div class="col-md-3 cat one">
+    <div class="col-md-3 one">
       <strong>Categories</strong>
       <br>
-      
-       <img class="a" src="{{ asset('assets/img/logo.jpg') }}" width="100" height="60"><br>
-        <a class="nav-link" aria-current="page" href="#">Movies</a>
+      @foreach ($categories as $category)
+       {{-- <img class="a" src="{{ asset('assets/img/logo.jpg') }}" width="100" height="60"><br>
+        <a class="nav-link" aria-current="page" href="#"></a> --}}
         
+{{-- @dump($category); --}}
+        <a class="nav-link" aria-current="page" href="#">{{$category->name}}</a>
+        <img class="a" src="{{ $category->cat_image}}" width="100" height="60"><br>
 
-       <img class="a" src="{{ asset('assets/img/logo.jpg') }}" width="100" height="60"><br>
-        <a class="nav-link" aria-current="page" href="#">Musics</a>
-       
-
-       <img class="a" src="{{ asset('assets/img/logo.jpg') }}" width="100" height="60"><br>
-        <a class="nav-link" aria-current="page" href="#">Games</a>
-       
-
-       <img class="a" src="{{ asset('assets/img/logo.jpg') }}" width="100" height="60"><br>
-        <a class="nav-link" aria-current="page" href="#">Shopping</a>
-       
-
-       <img class="a" src="{{ asset('assets/img/logo.jpg') }}" width="100" height="60"><br>
-       <a class="nav-link" aria-current="page" href="#">Sports</a>
         
-
-       <img class="a" src="{{ asset('assets/img/logo.jpg') }}" width="100" height="60"><br> 
-       <a class="nav-link" aria-current="page" href="#">Softwares</a>
-        
+          
+        @endforeach
 
     </div>
 
@@ -41,7 +28,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ asset('assets/img/logo.jpg') }}" class="d-block w-100" alt="oups!!!">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block top">
                   <h3>Welcome to subscription</h3>
                   <p>Get solutions to your IT problems</p>
                      <a href="#" class="btn btn-danger btn-lg">Start here</a>
@@ -73,98 +60,23 @@
 
   <div class="responsive">
   <div class="row">
+    @foreach ($services as $service)
+
   <div class="col-md-3 cardsection"> 
     <div class="card sectioncard">
-    <img class="card-img-top" src="{{asset('assets/img/netflix.jpg')}}" class="card-img-top" alt="...">
+        
+    <img class="card-img-top" src="{{ $service->services_image}}" class="card-img-top" alt="...">
 
       <div class="card-body">
-        <h5 class="card-title">NETFLIX</h5>
+        <h5 class="card-title">{{$service->name}}</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <a href="/details" class="btn btn-primary">More views</a>
       </div>
     </div>
   </div>
+  @endforeach
 
-  <div class="col-md-3 cardsection">
-    <div class="card sectioncard">
-    <img class="card-img-top" src="{{asset('assets/img/amazon.jpg')}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">AMAZON</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">See more </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-3 cardsection">
-    <div class="card sectioncard">
-    <img class="card-img-top" src="{{asset('assets/img/logo.jpg')}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">CANAL+</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">See more </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 cardsection">
-    <div class="card sectioncard">
-    <img class="card-img-top" src="{{asset('assets/img/sportify.jpg')}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">Spotify</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">See more </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 cardsection">
-    <div class="card sectioncard">
-    <img class="card-img-top" src="{{asset('assets/img/sportify.jpg')}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">Deezer</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">See more </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-3 cardsection">
-    <div class="card sectioncard">
-    <img class="card-img-top" src="{{asset('assets/img/sport.jpg')}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">Sports</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">See more </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 cardsection">
-    <div class="card sectioncard">
-    <img class="card-img-top" src="{{asset('assets/img/logo.jpg')}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">Apple Music</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">See more </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 cardsection">
-    <div class="card sectioncard">
-    <img class="card-img-top" class="card-img-top" src="{{asset('assets/img/games.jpg')}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">Games</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">See more </a>
-      </div>
-    </div>
-  </div>
-
+  
 
 </div>
 

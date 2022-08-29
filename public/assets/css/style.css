@@ -8,8 +8,13 @@
     padding: 5px;
     margin: 25px;
     box-sizing: border-box;
-    border-radius: 50px;
+    border-radius: 100px;
     text-align: center;
+}
+
+.cat{
+    align-content: space-around;
+
 }
 
 .two {
@@ -22,7 +27,7 @@
 }
 img.a {
     vertical-align: baseline;
-    border-radius: 300px;
+    border-radius: 10px;
 }
 
 .footer1 {
@@ -117,9 +122,81 @@ a.btn-danger{
 }
 /* ################################ details page ################################## */
 
-nav.breadcrumb{
+div.title{
+
     color: red;
 }
+.standard{
+    background-color: rgb(170, 116, 116);
+    margin: auto;
+    padding: 20%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.Premuim{
+    background-color: rgb(193, 89, 89);
+    margin: auto;
+    padding: 20%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.VIP{
+    background-color: rgb(213, 63, 63);
+    margin: auto;
+    padding: 20%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.VVIP{
+    background-color: rgb(208, 28, 28);
+    margin: auto;
+    padding: 20%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.icon{
+    color:red;
+
+}
+.btn1{
+    background-color: rgb(170, 116, 116);
+    color: whitesmoke;
+    overflow: visible;
+
+}
+.btn2{
+    background-color: rgb(193, 89, 89);
+    color: whitesmoke;
+    overflow: visible;
+
+}
+.btn3{
+    background-color: rgb(213, 63, 63);
+    color: whitesmoke;
+    overflow: visible;
+
+}
+.btn4{
+    background-color: rgb(208, 28, 28);
+    color: whitesmoke;
+    overflow: visible;
+
+}
+.sec{
+    color: rgb(223, 25, 30);
+    background-color: white;
+    overflow: visible;
+
+}
+
+
+
+
+
+
+
+
+
 /*
 a.btn-secondary {
     color: white;
@@ -148,7 +225,7 @@ h5.card-title {
     color: red;
 }
 h4.card-title {
-    color:rgb(163, 19, 19);
+    color:black;
 }
 /* ################################ details page ################################## */
 
@@ -161,9 +238,9 @@ div.carousselslide {
 /* ################################ details page ################################## */
 
 
-div.a{
+.details{
     padding: 5px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     box-sizing: border-box;
     border-radius: 60px;
     overflow: hidden;
@@ -184,6 +261,17 @@ div.info1{
 .active{
 color: rgb(163, 19, 19);;
 }
+.col-title{
+    margin-top: 5%; 
+    padding: 20px;
+    box-shadow: 2px 2px 5px;
+}
+ .col-sub{
+    color: rgb(205, 107, 107);
+    margin-top: 5%; 
+    text-decoration:underline;
+
+} 
 /*.details a{
     background-color: brown;
 }
@@ -193,5 +281,19 @@ color: rgb(163, 19, 19);;
 }
 
 
-/* ################################ media queries ################################## */
+/* ################################ home page image text  ################################## */
+/* div.carousel-caption{
+    padding: 10px;
+} */
 
+/* ################################ admin ################################## */
+div.admin{
+    height: 100%;
+    width: 80%;
+    text-align: center;
+    margin-top: 10%;
+
+}
+button.submit{
+    margin: 5%
+}

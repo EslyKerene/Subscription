@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pricing', function (Blueprint $table) {
+        Schema::create('pricings', function (Blueprint $table) {
             $table->id();
             $table-> unsignedBigInteger('services_id');
             $table->foreign('services_id')-> references('id')-> on('services');
-            $table-> string('validity');
-            $table-> bigInteger('price');
-
+            $table-> enum('validity', ["1 Month","3 Months","6 Months","12 Months"]);
+            $table-> bigInteger('amount');
             $table->timestamps();
         });
     }
