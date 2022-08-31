@@ -22,6 +22,7 @@ class CategoryController extends Controller
         return view('users.welcome', [
             'categories' => $categories,
             'services' => $services,
+            
         ]);
     }
 

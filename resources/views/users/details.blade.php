@@ -55,7 +55,6 @@
         <div class="col-sm-12">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                     {{-- @foreach ($services as $service) --}}
                     <center>
                          {{-- @dump($pricings)  --}}
 
@@ -65,7 +64,6 @@
                         <h6 class="display-6"> {{$pricings[0]->name}} </h6>
                     </center>
                     <p>{{$pricings[0]->description}}</p>
-                        {{-- @endforeach --}}
                 </div>
             </div>
         </div>
@@ -378,72 +376,36 @@
 
 
 
-
-        <div class="container">
-            <div class="responsive">
-                <div class="row">
-                    <div class="col-md-3 cardsection">
-                        <div class="card sectioncard">
-                            <img class="card-img-top" src="{{asset('assets/img/amazon.jpg')}}" class="card-img-top"
-                                alt="...">
-
-                            <div class="card-body">
-                                <h5 class="card-title">AMAZON</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.
-                                </p>
-
-                                <a href="/details" class="btn btn-primary">See more </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 cardsection">
-                        <div class="card sectioncard">
-
-                            <img class="card-img-top" src="{{asset('assets/img/logo.jpg')}}" class="card-img-top"
-                                alt="...">
-
-                            <div class="card-body">
-                                <h5 class="card-title">CANAL+</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.
-                                </p>
-                                <a href="#" class="btn btn-primary">See more </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 cardsection">
-                        <div class="card sectioncard">
-                            <img class="card-img-top" src="{{asset('assets/img/sportify.jpg')}}" class="card-img-top"
-                                alt="...">
-
-                            <div class="card-body">
-                                <h5 class="card-title">Spotify</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.
-                                </p>
-                                <a href="#" class="btn btn-primary">See more </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 cardsection">
-                        <div class="card sectioncard">
-                            <img class="card-img-top" src="{{asset('assets/img/sportify.jpg')}}" class="card-img-top"
-                                alt="...">
-
-                            <div class="card-body">
-                                <h5 class="card-title">Deezer</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.
-                                </p>
-                                <a href="#" class="btn btn-primary">See more </a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="responsive">
+            <div class="row">
+              {{-- @dump($services); --}}
+          
+              @foreach ($services as $service)
+              
+          
+          
+          
+          
+            <div class="col-md-3 cardsection"> 
+              <div class="card sectioncard">
+                  
+              <img class="card-img-top" src="{{ $service->services_image}}" class="card-img-top" alt="...">
+          
+                <div class="card-body">
+                  <h5 class="card-title">{{$service->name}}</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          
+                  <a href="/details/{{$service->id}}" class="btn btn-primary">More views</a>
                 </div>
+              </div>
             </div>
-        </div>
-
+            @endforeach
+          
+            
+          
+          </div>
+          
+          </div>
 
 
 

@@ -53,9 +53,16 @@ class PricingController extends Controller
              ->select('pricings.*', 'services.name', 'services.description')
              ->where('services.id', '=', $id)
             ->get();
+            $services = DB::table('services')->get();
 
-         return view('users.details', ['pricings' => $pricings]);
+
+         return view('users.details', [
+            'pricings' => $pricings, 
+            'services' => $services,
+
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
