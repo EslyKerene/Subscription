@@ -60,7 +60,12 @@
 
   <div class="responsive">
   <div class="row">
+    {{-- @dump($services); --}}
+
     @foreach ($services as $service)
+
+
+
 
   <div class="col-md-3 cardsection"> 
     <div class="card sectioncard">
@@ -70,7 +75,8 @@
       <div class="card-body">
         <h5 class="card-title">{{$service->name}}</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/details" class="btn btn-primary">More views</a>
+
+        <a href="/details/{{$service->id}}" class="btn btn-primary">More views</a>
       </div>
     </div>
   </div>

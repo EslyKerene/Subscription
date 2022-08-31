@@ -20,7 +20,7 @@ class PricingSeeder extends Seeder
     {
         //
         
-        DB::table('pricing')->insert([
+        DB::table('pricings')->insert([
             'services_id' => 2,
             'validity' => Str::random(10),
             'amount' => rand(0,10),

@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-// use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PricingController;
 
 //use App\Http\Controllers\Auth\loginController;
 /*
@@ -30,10 +30,8 @@ Route::get('auth/login', 'AuthController@getLogin');
  Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //  Users routes
-Route::get('/details', function () {
-   return view('users.details');
-});
-Route::resource('/', [CategoryController::class]);
+Route::resource('/details/{id}', PricingController::class);
+Route::resource('/', CategoryController::class);
 
 Route::get('/home', function () {
     return view('users.welcome');

@@ -55,12 +55,17 @@
         <div class="col-sm-12">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    {{-- @foreach ($services as $service)
+                     {{-- @foreach ($services as $service) --}}
                     <center>
-                        <h6 class="display-6"> {{$services->name}} </h6>
+                         {{-- @dump($pricings)  --}}
+
+                
+                            
+
+                        <h6 class="display-6"> {{$pricings[0]->name}} </h6>
                     </center>
-                    <p>{{$services->description}}</p>
-                        @endforeach --}}
+                    <p>{{$pricings[0]->description}}</p>
+                        {{-- @endforeach --}}
                 </div>
             </div>
         </div>
@@ -68,6 +73,7 @@
 
     <div class="container">
 
+    
         <div class="responsive details">
             <div class="row">
                 <div class="col-md-3 cardsection">
@@ -115,7 +121,8 @@
                                         d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
                                     <path
                                         d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
-                                </svg>1 month
+                                </svg>
+                                {{$pricings[0]->validity}}
                             </p>
                             <p class="info1"> <strong>
                                     <h5>Price:</h5>
@@ -124,7 +131,8 @@
                             </p>
 
                             <p class="card-text">
-                                <center> 50$ </center>
+                                <center> 
+                                    {{$pricings[0]->amount}}frs</center>
                             </p>
                             <a href="#" class="btn  btn1"> <b> Buy now </b> </a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart </b> </a>
@@ -167,6 +175,7 @@
                                 </svg> 20 movies
                                 <br>
 
+
                             </p>
                             <dd></dd>
 
@@ -179,7 +188,7 @@
                                         d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
                                     <path
                                         d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
-                                </svg> 3 months
+                                </svg> {{$pricings[3]->validity}}
                             </p>
                             <p> <strong>
                                     <h5>Price:</h5>
@@ -188,7 +197,7 @@
                             </p>
 
                             <p class="card-text">
-                                <center> 50$ </center>
+                                <center> {{$pricings[3]->amount}}frs </center>
                             </p>
                             <a href="#" class="btn btn2"><b> Buy now</b></a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
@@ -243,7 +252,7 @@
                                         d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
                                     <path
                                         d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
-                                </svg> 6 months
+                                </svg> {{$pricings[2]->validity}}
                             </p>
                             <p class="info1"> <strong>
                                     <h5>Price:</h5>
@@ -252,7 +261,7 @@
                             </p>
 
                             <p class="card-text">
-                                <center> 50$ </center>
+                                <center> {{$pricings[2]->amount}}frs </center>
                             </p>
                             <a href="#" class="btn btn3"><b> Buy now</b></a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
@@ -305,7 +314,7 @@
                                         d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
                                     <path
                                         d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
-                                </svg> 12 months
+                                </svg> {{$pricings[1]->validity}}
                             </p>
                             <p class="info1"> <strong>
                                     <h5>Price:</h5>
@@ -314,7 +323,7 @@
                             </p>
 
                             <p class="card-text">
-                                <center> 50$ </center>
+                                <center> {{$pricings[1]->amount}}frs </center>
                             </p>
                             <a href="#" class="btn btn4"><b> Buy now</b></a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
@@ -323,7 +332,6 @@
                 </div>
             </div>
         </div>
-
 
 
 
@@ -384,12 +392,14 @@
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.
                                 </p>
-                                <a href="#" class="btn btn-primary">See more </a>
+
+                                <a href="/details" class="btn btn-primary">See more </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 cardsection">
                         <div class="card sectioncard">
+
                             <img class="card-img-top" src="{{asset('assets/img/logo.jpg')}}" class="card-img-top"
                                 alt="...">
 

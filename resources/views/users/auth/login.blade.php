@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-3 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -52,8 +52,8 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-danger">
                                     {{ __('Login') }}
                                 </button>
 
@@ -61,9 +61,22 @@
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
+                                   
+                                    {{-- <a class="btn login" href="/register">
+                                        {{ __('Register') }}
+                                    </a> --}}
                                 @endif
                             </div>
                         </div>
+
+                         <div class="container">
+                            <center><p>No yet an account? Sign up here <a class="btn login" href="/register">
+                                {{ __('Register') }}
+                            </a></p>   </center>
+
+                               
+                            </div>
+                        </div> 
                     </form>
                 </div>
             </div>

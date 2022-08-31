@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class ServiceController extends Controller
+class PricingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,6 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
-        $services = DB::table('services')->get();
- 
-        return view('users.welcome', ['services' => $services]);
         
     }
 
@@ -38,7 +34,7 @@ class ServiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(request $request, $id)
     {
         //
     }
@@ -51,7 +47,14 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $pricings = DB::table('pricings')
+             ->join('services', 'pricings.services_id', '=', 'services.id')
+             ->select('pricings.*', 'services.name', 'services.description')
+             ->where('services.id', '=', $id)
+            ->get();
+
+         return view('users.details', ['pricings' => $pricings]);
     }
 
     /**
@@ -72,7 +75,7 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( $request, $id)
     {
         //
     }
