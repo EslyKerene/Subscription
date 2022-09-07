@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class PricingController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +15,16 @@ class PricingController extends Controller
      */
     public function index()
     {
+        // $pricings= DB::table('pricings')
+        // ->join('services', 'pricings.services_id', '=', 'services.id')
+        // ->select('pricings.*', 'services.name')
+        // -> where('services.id', '=', 1)
+        // ->get();
+        
+        // return view('users.payment', [
+        //     'pricings' => $pricings
+        // ]);
+        
         
     }
 
@@ -35,7 +44,7 @@ class PricingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(request $request, $id)
+    public function store(Request $request)
     {
         //
     }
@@ -48,22 +57,22 @@ class PricingController extends Controller
      */
     public function show($id)
     {
+        $pricings= DB::table('pricings')
+        ->join('services', 'pricings.services_id', '=', 'services.id')
+        ->select('pricings.*', 'services.name')
+        -> where('services.id', '=', $id)
+        ->get();
+
+        // for ($i=$id; $i > $id ; $i >+$id) { 
+        //     # code...
+        // }
         
-        $pricings = DB::table('pricings')
-             ->join('services', 'pricings.services_id', '=', 'services.id')
-             ->select('pricings.*', 'services.name', 'services.description')
-             ->where('services.id', '=', $id)
-            ->get();
-             $services = service::where('id','!=',$id)->get();
-
-
-         return view('users.details', [
-            'pricings' => $pricings, 
-             'services' => $services,
-
+        return view('users.payment', [
+            'pricings' => $pricings
         ]);
-    }
+        
 
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -83,7 +92,7 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update( $request, $id)
+    public function update(Request $request, $id)
     {
         //
     }

@@ -194,26 +194,35 @@ div.title{
     overflow: visible;
 
 }
-
-
-
-
-
-
-
-
-/*
-a.btn-secondary {
-    color: white;
-    box-sizing: border-box;
-    border-radius: 10px;
+.payment{
+    height: 100%;
+    width: 80%;
+    text-align: center;
+    margin-top: 10%;
+    margin-top: 5%; 
+    padding: 20px;
+    box-shadow: 2px 2px 5px;
+    border: 1px solid black;
+    
 }
-*/
-/*
-.dl{
-    color: black;
+.sub{
+    text-decoration: dotted;
 }
-*/
+
+.submit{
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 a.nav-link {
     color: red;

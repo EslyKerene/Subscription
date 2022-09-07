@@ -56,11 +56,7 @@
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <center>
-                         {{-- @dump($pricings)  --}}
-
-                
-                            
-
+                        {{-- @dump($pricings); --}}
                         <h6 class="display-6"> {{$pricings[0]->name}} </h6>
                     </center>
                     <p>{{$pricings[0]->description}}</p>
@@ -69,12 +65,22 @@
         </div>
     </div>
 
+   
     <div class="container">
 
-    
+        {{-- $n = count($pricings); --}}
+
+
         <div class="responsive details">
             <div class="row">
-                <div class="col-md-3 cardsection">
+
+                @for ($i = 0; $i < count($pricings); $i++)
+                {{-- @dump($pricings[$i]); --}}
+               
+
+
+
+             <div class="col-md-3 cardsection">
                     <div class="card sectioncard DT">
 
                         <div class="card-body">
@@ -120,7 +126,7 @@
                                     <path
                                         d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
                                 </svg>
-                                {{$pricings[0]->validity}}
+                                {{$pricings[$i]->validity}}
                             </p>
                             <p class="info1"> <strong>
                                     <h5>Price:</h5>
@@ -129,17 +135,19 @@
                             </p>
 
                             <p class="card-text">
-                                <center> 
-                                    {{$pricings[0]->amount}}frs</center>
+                                <center>
+                                    {{$pricings[$i]->amount}}frs
+                                </center>
                             </p>
-                            <a href="#" class="btn  btn1"> <b> Buy now </b> </a>
+                            <a href="/payment/{{$pricings[$i]->id}}" class="btn  btn1"> <b> Buy now </b> </a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart </b> </a>
 
                         </div>
                     </div>
                 </div>
+        @endfor
 
-                <div class="col-md-3 cardsection">
+                {{-- <div class="col-md-3 cardsection"> 
                     <div class="card sectioncard DT">
 
                         <div class="card-body">
@@ -197,7 +205,7 @@
                             <p class="card-text">
                                 <center> {{$pricings[3]->amount}}frs </center>
                             </p>
-                            <a href="#" class="btn btn2"><b> Buy now</b></a>
+                            <a href="/payment/{{$pricings[0]->id}}" class="btn btn2"><b> Buy now</b></a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
 
                         </div>
@@ -261,7 +269,7 @@
                             <p class="card-text">
                                 <center> {{$pricings[2]->amount}}frs </center>
                             </p>
-                            <a href="#" class="btn btn3"><b> Buy now</b></a>
+                            <a href="/payment/{{$pricings[0]->id}}" class="btn btn3"><b> Buy now</b></a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
                         </div>
                     </div>
@@ -323,7 +331,7 @@
                             <p class="card-text">
                                 <center> {{$pricings[1]->amount}}frs </center>
                             </p>
-                            <a href="#" class="btn btn4"><b> Buy now</b></a>
+                            <a href="/payment/{{$pricings[0]->id}}" class="btn btn4"><b> Buy now</b></a>
                             <a href="#" class="btn btn-secondary sec"> <b> Add to cart</b> </a>
                         </div>
                     </div>
@@ -349,7 +357,7 @@
 
 
 
-
+ --}}
 
 
 
@@ -378,34 +386,35 @@
 
         <div class="responsive">
             <div class="row">
-              {{-- @dump($services); --}}
-          
-              @foreach ($services as $service)
-              
-          
-          
-          
-          
-            <div class="col-md-3 cardsection"> 
-              <div class="card sectioncard">
-                  
-              <img class="card-img-top" src="{{ $service->services_image}}" class="card-img-top" alt="...">
-          
-                <div class="card-body">
-                  <h5 class="card-title">{{$service->name}}</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          
-                  <a href="/details/{{$service->id}}" class="btn btn-primary">More views</a>
+                {{-- @dump($services); --}}
+
+                @foreach ($services as $service)
+
+
+
+
+
+                <div class="col-md-3 cardsection">
+                    <div class="card sectioncard">
+
+                        <img class="card-img-top" src="{{ $service->services_image}}" class="card-img-top" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{$service->name}}</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+
+                            <a href="/details/{{$service->id}}" class="btn btn-primary">More views</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                @endforeach
+
+
+
             </div>
-            @endforeach
-          
-            
-          
-          </div>
-          
-          </div>
+
+        </div>
 
 
 

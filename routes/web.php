@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PricingController;
+use App\Http\Controllers\PaymentController;
 
 //use App\Http\Controllers\Auth\loginController;
 /*
@@ -30,12 +31,26 @@ Route::get('auth/login', 'AuthController@getLogin');
  Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //  Users routes
-Route::resource('/details/{id}', PricingController::class);
+Route::resource('/details', PricingController::class);
 Route::resource('/', CategoryController::class);
 
-Route::get('/home', function () {
-    return view('users.welcome');
-});
+Route::resource('/home', CategoryController::class);
+ Route::resource('/payment',   PaymentController::class);
+ 
+ 
+//  function () {
+//    return view('users.payment');
+// });
+ 
+ 
+ 
+ 
+ 
+ 
+//
+ 
+
+
 // Route::get('/register', function () {
 //     return view('register');
 // });

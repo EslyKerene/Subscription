@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('First name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="first_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Last name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="{{ old('name') }}" required autocomplete="new-password">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="last_name" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('User name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="{{ old('name') }}" required autocomplete="new-password">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="user_name" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -53,11 +53,13 @@
                             </div>
                         </div>
 
+                    
+
                         <div class="row mb-3">
                             <label for="text" class="col-md-4 col-form-label text-md-end">{{ __('Phone number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="text" type="text" class="form-control @error('text') is-invalid @enderror" name="{{ old('text') }}" required autocomplete="text">
+                                <input id="text" type="text" class="form-control @error('text') is-invalid @enderror" name="phone_number" required autocomplete="text">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
